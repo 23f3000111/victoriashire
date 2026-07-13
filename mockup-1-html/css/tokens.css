@@ -1,0 +1,71 @@
+/* ============================================================
+   Victoriashire — Direction A "Guidepost calm"
+   Warm, calm, intelligent, credible. Ink navy anchor, warm
+   cream base, one soft periwinkle accent + muted sage.
+   ============================================================ */
+:root {
+  /* Surfaces */
+  --cream: #FBF8F1;        /* page base — never stark white */
+  --cream-deep: #F3EDE1;   /* alternating band */
+  --white: #FFFFFF;        /* cards */
+
+  /* Ink (logo wordmark navy) */
+  --ink: #26276B;
+  --ink-soft: #56578C;
+  --ink-line: rgba(38, 39, 107, .12);
+  --ink-line-soft: rgba(38, 39, 107, .07);
+
+  /* Accents */
+  --peri: #5E6FA6;         /* primary accent */
+  --peri-deep: #46568B;    /* accent text / hover */
+  --peri-soft: #E7EAF3;    /* accent tint */
+  --sage: #7E9A82;         /* secondary accent */
+  --sage-soft: #E6EDE6;
+  --sand: #EFE6D3;         /* warm block/tint */
+
+  /* Type */
+  --font-display: "Hanken Grotesque", system-ui, sans-serif;
+  --font-body: "Figtree", system-ui, sans-serif;
+
+  /* Shape */
+  --r-lg: 26px;
+  --r: 18px;
+  --r-sm: 12px;
+  --r-pill: 999px;
+
+  /* Elevation — soft ambient only */
+  --shadow-sm: 0 6px 20px -10px rgba(38, 39, 107, .18);
+  --shadow: 0 18px 44px -18px rgba(38, 39, 107, .22);
+
+  /* Layout — generous, airy */
+  --container: 1200px;
+  --gutter: clamp(1.2rem, 4vw, 2.5rem);
+  --section-y: clamp(4rem, 8vw, 7rem);
+
+  /* Motion */
+  --ease: cubic-bezier(.22, .61, .36, 1);
+
+  /* ---- Legacy aliases (keep old inner pages readable until rebuilt;
+          removed once every page is on the new system) ---- */
+  --paper: var(--cream);
+  --paper-deep: var(--cream-deep);
+  --poppy: var(--peri);
+  --poppy-deep: var(--peri-deep);
+  --poppy-tint: var(--peri-soft);
+  --sky: var(--peri);
+  --sky-tint: var(--peri-soft);
+  --sun: var(--sage);
+  --sun-tint: var(--sage-soft);
+  --grape: var(--peri-deep);
+  --grape-tint: var(--peri-soft);
+  --font-hand: var(--font-display);
+  --radius-card: var(--r-lg);
+  --radius-lg: var(--r-lg);
+  --radius-sm: var(--r-sm);
+  --radius-pill: var(--r-pill);
+  --shadow-soft: var(--shadow-sm);
+  --shadow-lift: var(--shadow);
+  --shadow-sticker: 0 2px 0 var(--ink-line);
+  --shadow-pop: var(--shadow-sm);
+  --ease-bounce: var(--ease);
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout — Victoriashire (demo)</title>
+  <meta name="description" content="Demo checkout for the Victoriashire mockup. No card is charged and nothing is stored.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+  <div class="co-wrap">
+    <!-- LEFT: order summary -->
+    <div class="co-left">
+      <div class="co-left-inner">
+        <a class="co-back" href="shop.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to the shop
+        </a>
+        <div class="co-brand">
+          <span class="mark">V</span>
+          <span class="name">Victoriashire Education</span>
+        </div>
+        <span class="co-testmode">TEST MODE</span>
+        <div class="co-amount-label">Pay Victoriashire Education</div>
+        <div class="co-amount" id="co-amount">RM 0.00</div>
+        <div class="co-lines" id="co-lines"></div>
+        <div class="co-total">
+          <span>Total due</span>
+          <span class="co-total-val" id="co-total">RM 0.00</span>
+        </div>
+        <div class="co-foot">
+          Powered by <strong>stripe</strong> · <a href="#">Terms</a> · <a href="#">Privacy</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: payment form -->
+    <div class="co-right">
+      <div class="co-right-inner">
+        <div class="co-demo-banner" id="co-banner">
+          <button class="co-demo-close" id="co-banner-close" type="button" aria-label="Dismiss">×</button>
+          This is a demo checkout built for this mockup. <strong>No card is charged and nothing you type is stored.</strong> Try the test card <strong>4242 4242 4242 4242</strong> with any future date and any CVC.
+        </div>
+
+        <form id="co-form" novalidate>
+          <div class="co-field" id="f-email">
+            <label class="co-label" for="email">Email</label>
+            <input class="co-input" id="email" name="email" type="email" inputmode="email" placeholder="you@example.com" autocomplete="email">
+            <div class="co-error">Please enter a valid email address.</div>
+          </div>
+
+          <div class="co-field" id="f-card">
+            <label class="co-label" for="card-number">Card information</label>
+            <div class="co-card-group" id="card-group">
+              <div class="co-card-row">
+                <input class="co-input co-card-number" id="card-number" inputmode="numeric" placeholder="1234 1234 1234 1234" autocomplete="cc-number" maxlength="19">
+                <span class="co-card-brand" id="card-brand"></span>
+              </div>
+              <div class="co-card-split">
+                <input class="co-input" id="card-exp" inputmode="numeric" placeholder="MM / YY" autocomplete="cc-exp" maxlength="7">
+                <input class="co-input" id="card-cvc" inputmode="numeric" placeholder="CVC" autocomplete="cc-csc" maxlength="4">
+              </div>
+            </div>
+            <div class="co-error" id="card-error">Your card number is incomplete.</div>
+          </div>
+
+          <div class="co-field" id="f-name">
+            <label class="co-label" for="card-name">Cardholder name</label>
+            <input class="co-input" id="card-name" placeholder="Full name on card" autocomplete="cc-name">
+            <div class="co-error">Please enter the name on your card.</div>
+          </div>
+
+          <div class="co-field" id="f-country">
+            <label class="co-label" for="country">Country or region</label>
+            <select class="co-input" id="country" autocomplete="country">
+              <option value="MY" selected>Malaysia</option>
+              <option value="SG">Singapore</option>
+              <option value="GB">United Kingdom</option>
+              <option value="AU">Australia</option>
+              <option value="US">United States</option>
+            </select>
+          </div>
+
+          <button class="co-pay" id="co-pay" type="submit">
+            <span id="co-pay-label">Pay RM 0.00</span>
+          </button>
+
+          <div class="co-secure">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            Secured demo — no real payment is processed
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/checkout.js"></script>
+</body>
+</html>

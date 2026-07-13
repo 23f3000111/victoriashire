@@ -1,0 +1,9 @@
+# Design reference screenshots (research only, not part of the deliverable)
+reference website/
+
+# Playwright scratch artifacts
+.playwright-mcp/
+
+# OS junk
+Thumbs.db
+.DS_Store
