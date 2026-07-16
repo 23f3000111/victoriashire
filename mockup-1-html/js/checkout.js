@@ -51,7 +51,9 @@ function renderSummary() {
 
   linesEl.innerHTML = items.map((it) => {
     const p = getProduct(it.id);
-    const thumb = `<div class="co-line-thumb"></div>`;
+    const thumb = p.image
+      ? `<img class="co-line-thumb" src="assets/img/${p.image}" alt="">`
+      : `<div class="co-line-thumb"></div>`;
     return `
       <div class="co-line">
         ${thumb}

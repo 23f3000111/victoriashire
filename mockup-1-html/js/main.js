@@ -56,7 +56,7 @@ function buildHeader() {
         <span class="topbar-note">Enrolling now for 2026 · two campuses in Puchong &amp; Putra Heights</span>
         <span class="topbar-links">
           <a href="tel:+60122692488">+60 12-269 2488</a>
-          <a href="https://wa.me/60122692488">Book a tour</a>
+          <a href="https://wa.me/60122692488" target="_blank" rel="noopener">Book a tour</a>
         </span>
       </div>
     </div>
@@ -66,7 +66,7 @@ function buildHeader() {
           <img src="assets/img/logo-preschool.avif" alt="Victoriashire International Preschool and Kindergarten logo" width="477" height="88">
         </a>
         <nav class="header-nav" aria-label="Primary">${links}</nav>
-        <a target="_blank" class="btn btn-primary btn-sm header-cta" href="https://wa.me/60122692488">Book a tour</a>
+        <a target="_blank" rel="noopener" class="btn btn-primary btn-sm header-cta" href="https://wa.me/60122692488">Book a tour</a>
         <button class="cart-btn" id="cart-open-btn" type="button" aria-label="Open cart, 0 items">
           ${svgBasket}
           <span class="cart-count" id="cart-count" aria-hidden="true">0</span>

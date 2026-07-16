@@ -87,6 +87,7 @@ const X_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 export function initWhatsAppBot() {
   let open = false;
   let started = false;
+  let currentNode = null;
   const timers = [];
 
   /* --- build DOM --- */
@@ -162,16 +163,22 @@ export function initWhatsAppBot() {
   const goToNode = (nodeId) => {
     const node = FLOW[nodeId];
     if (!node) return;
+    currentNode = nodeId;
     optsRow.textContent = '';
+    clearTimers();
     setTyping(true);
     let delay = 500;
     node.bot.forEach((text, idx) => {
-      timers.push(setTimeout(() => {
+      const isLast = idx === node.bot.length - 1;
+      const t = setTimeout(() => {
+        const i = timers.indexOf(t);
+        if (i > -1) timers.splice(i, 1);
         setTyping(false);
         addMsg('bot', text);
-        if (idx === node.bot.length - 1) showOptions(node.options);
+        if (isLast) showOptions(node.options);
         else setTyping(true);
-      }, delay));
+      }, delay);
+      timers.push(t);
       delay += 650 + Math.min(text.length * 12, 900);
     });
   };
@@ -194,8 +201,16 @@ export function initWhatsAppBot() {
     open = !open;
     nudge.classList.remove('show');
     root.classList.toggle('open', open);
-    if (open && !started) { started = true; goToNode('start'); }
-    if (!open) clearTimers();
+    if (!open) return;
+    // First open — start the conversation.
+    if (!started) { started = true; goToNode('start'); return; }
+    // Re-open: if a previous sequence was left without options showing
+    // (and none are still queued), recover so the chat can't dead-end.
+    const queued = timers.length > 0;
+    if (!optsRow.children.length && !queued && currentNode) {
+      setTyping(false);
+      showOptions(FLOW[currentNode].options);
+    }
   };
 
   launcher.addEventListener('click', toggle);

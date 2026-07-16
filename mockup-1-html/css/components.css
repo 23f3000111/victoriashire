@@ -276,6 +276,8 @@
 .cart-row.is-added { background: var(--peri-soft); border-radius: var(--r-sm); }
 .cart-thumb { width: 64px; height: 64px; border-radius: var(--r-sm); object-fit: cover; background: var(--white); }
 .cart-thumb--block { display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; }
+.cart-thumb--svg { padding: 0; overflow: hidden; }
+.cart-thumb--svg .goodie-svg { width: 100%; height: 100%; }
 .cart-thumb--peri { background: var(--peri-soft); color: var(--peri-deep); }
 .cart-thumb--sage { background: var(--sage-soft); color: var(--sage); }
 .cart-thumb--sand { background: var(--sand); color: #A8763E; }

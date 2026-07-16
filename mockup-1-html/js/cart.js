@@ -3,6 +3,7 @@
    Exposes window.vsCart for other pages (shop, product, console).
    ============================================================ */
 import { PRODUCTS, getProduct, formatRM, productTint, NOTE_COURSE, NOTE_GOODIE } from "./products.js";
+import { goodieSVG } from "./goodie-art.js";
 
 const KEY = "vs-cart-a";
 const REDUCE = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -119,8 +120,10 @@ function buildDrawer() {
 }
 
 function thumb(p) {
-  const initial = p.name.trim().charAt(0).toUpperCase();
-  return `<div class="cart-thumb cart-thumb--block cart-thumb--${productTint(p.id)}">${initial}</div>`;
+  if (p.image) {
+    return `<img class="cart-thumb" src="assets/img/${p.image}" alt="" loading="lazy">`;
+  }
+  return `<div class="cart-thumb cart-thumb--svg cart-thumb--${productTint(p.id)}">${goodieSVG(p.id)}</div>`;
 }
 
 function renderDrawer(highlightId) {
@@ -168,7 +171,7 @@ function renderDrawer(highlightId) {
       <span>Subtotal</span>
       <span class="price cart-subtotal-val">${formatRM(subtotal())}</span>
     </div>
-    <a class="btn btn-primary cart-checkout" href="checkout.html">Go to checkout</a>
+    <a class="btn btn-primary cart-checkout" href="checkout.html" target="_blank" rel="noopener">Go to checkout</a>
     <p class="cart-demo-note">Demo checkout — no card is charged.</p>`;
 
   // wire row buttons

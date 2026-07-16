@@ -56,7 +56,9 @@
 
 /* ---------------- STATEMENT ---------------- */
 .statement { text-align: center; padding-block: clamp(3rem, 6vw, 5rem); }
-.statement .h-title { margin: .3rem 0 1.2rem; max-width: 20ch; margin-inline: auto; }
+.statement .h-title { margin: .3rem 0 1.2rem; max-width: 22ch; margin-inline: auto; }
+/* let the statement copy breathe across the band instead of hugging the left */
+.statement .sec-lede { max-width: 70ch; margin-inline: auto; }
 
 /* ---------------- VALUES ---------------- */
 .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
@@ -182,12 +184,10 @@
 .teaser-art {
   width: 100%; aspect-ratio: 4 / 3;
   border-radius: var(--r); margin-bottom: .6rem;
-  display: grid; place-items: center;
+  display: grid; place-items: center; overflow: hidden;
+  background: var(--cream-deep);
 }
-.teaser-art svg { width: 56px; height: 56px; }
-.teaser-art--peri { background: var(--peri-soft); color: var(--peri-deep); }
-.teaser-art--sage { background: var(--sage-soft); color: var(--sage); }
-.teaser-art--sand { background: var(--sand); color: #A8763E; }
+.teaser-art .goodie-svg { width: 100%; height: 100%; }
 .teaser-card h3 { font-size: 1.05rem; }
 .teaser-card .price { font-size: 1.05rem; }
 .teaser-card .btn { margin-top: .3rem; }
@@ -384,6 +384,9 @@
 .shop-card-media--sage, .product-media--sage { background: var(--sage-soft); color: var(--sage); }
 .shop-card-media--sand, .product-media--sand { background: var(--sand); color: #A8763E; }
 .shop-monogram { font-family: var(--font-display); font-weight: 700; font-size: 2.6rem; opacity: .92; }
+/* product media: photo fills the frame, illustration sits on the tint */
+.shop-card-media img, .product-media img { width: 100%; height: 100%; object-fit: cover; }
+.shop-card-media .goodie-svg, .product-media .goodie-svg { width: 100%; height: 100%; }
 .shop-badge, .product-badge { position: absolute; top: .6rem; left: .6rem; background: var(--ink); color: #fff; font-family: var(--font-body); font-size: .7rem; font-weight: 600; letter-spacing: .04em; padding: .26rem .62rem; border-radius: var(--r-pill); }
 .shop-badge--new, .product-badge--new { background: var(--sage); }
 .shop-card h3 { font-size: 1.02rem; margin-top: .3rem; }

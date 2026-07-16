@@ -2,13 +2,16 @@
    shop.js — renders the shop grid + filter pills (no reload).
    ============================================================ */
 import { PRODUCTS, formatRM, productTint } from "./products.js";
+import { goodieSVG } from "./goodie-art.js";
 
 function cardMedia(p) {
   const badge = p.badge
     ? `<span class="shop-badge${p.badge === "New" ? " shop-badge--new" : ""}">${p.badge}</span>`
     : "";
-  const initial = p.name.trim().charAt(0).toUpperCase();
-  return `<div class="shop-card-media shop-card-media--${productTint(p.id)}">${badge}<span class="shop-monogram">${initial}</span></div>`;
+  const art = p.image
+    ? `<img src="assets/img/${p.image}" alt="${p.name}" loading="lazy">`
+    : goodieSVG(p.id);
+  return `<div class="shop-card-media shop-card-media--${productTint(p.id)}">${badge}${art}</div>`;
 }
 
 function card(p) {

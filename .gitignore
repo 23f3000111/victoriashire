@@ -4,6 +4,9 @@ reference website/
 # Playwright scratch artifacts
 .playwright-mcp/
 
+# Ad-hoc screenshots dropped in the project root
+/image.png
+
 # OS junk
 Thumbs.db
 .DS_Store

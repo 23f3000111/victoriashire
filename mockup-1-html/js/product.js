@@ -4,24 +4,29 @@
    Unknown id → friendly empty state with Percy.
    ============================================================ */
 import { PRODUCTS, getProduct, formatRM, productTint, NOTE_COURSE, NOTE_GOODIE } from "./products.js";
+import { goodieSVG } from "./goodie-art.js";
 
 const mount = document.getElementById("product-mount");
 const params = new URLSearchParams(location.search);
 const id = params.get("id");
 const product = getProduct(id);
 
-function monogram(p) { return p.name.trim().charAt(0).toUpperCase(); }
+function art(p, lazy = false) {
+  return p.image
+    ? `<img src="assets/img/${p.image}" alt="${p.name}"${lazy ? ' loading="lazy"' : ""}>`
+    : goodieSVG(p.id);
+}
 
 function media(p) {
   const badge = p.badge ? `<span class="product-badge${p.badge === "New" ? " product-badge--new" : ""}">${p.badge}</span>` : "";
-  return `<div class="product-media product-media--${productTint(p.id)}">${badge}<span class="product-monogram">${monogram(p)}</span></div>`;
+  return `<div class="product-media product-media--${productTint(p.id)}">${badge}${art(p)}</div>`;
 }
 
 function relatedCard(p) {
   return `
     <article class="shop-card">
       <a class="card-link" href="product.html?id=${p.id}">
-        <div class="shop-card-media shop-card-media--${productTint(p.id)}"><span class="shop-monogram">${monogram(p)}</span></div>
+        <div class="shop-card-media shop-card-media--${productTint(p.id)}">${art(p, true)}</div>
         <h3>${p.name}</h3>
       </a>
       <div class="card-meta">

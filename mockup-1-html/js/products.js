@@ -14,7 +14,7 @@ export const PRODUCTS = [
     price: 388,
     age: "4–15 months",
     schedule: "Mon–Fri, half or full days",
-    image: "poster-infant.avif",
+    image: "photo-blocks.avif",
     badge: null,
     blurb: "A gentle first month for your littlest one — feeding, naps and floor time with caregivers who send photo updates before you think to ask.",
     details: [
@@ -30,7 +30,7 @@ export const PRODUCTS = [
     price: 388,
     age: "15 months–3 years",
     schedule: "Mon–Fri mornings, full-day optional",
-    image: "poster-toddler.avif",
+    image: "photo-blocks.avif",
     badge: null,
     blurb: "Montessori-inspired mornings for new walkers: pouring, stacking, climbing, and the occasional triumphant mess.",
     details: [
@@ -46,7 +46,7 @@ export const PRODUCTS = [
     price: 388,
     age: "Ages 3–6",
     schedule: "Mon–Fri, choose morning or full-day",
-    image: "poster-ece.avif",
+    image: "photo-literacy.avif",
     badge: "Popular",
     blurb: "A full month in our kindergarten classrooms — letters, numbers, show-and-tell, and friends whose names you'll hear at dinner.",
     details: [
@@ -62,7 +62,7 @@ export const PRODUCTS = [
     price: 100,
     age: "Ages 4–12",
     schedule: "Weekday afternoons or Saturdays",
-    image: "poster-cambridge.avif",
+    image: "photo-literacy.avif",
     badge: null,
     blurb: "Four weeks of reading, writing and speaking practice with certified teachers, on the road to real Cambridge qualifications.",
     details: [
@@ -78,7 +78,7 @@ export const PRODUCTS = [
     price: 100,
     age: "Ages 4 and up",
     schedule: "Wednesdays & Saturdays",
-    image: "poster-piano.avif",
+    image: "photo-music-class.avif",
     badge: null,
     blurb: "Wednesdays and Saturdays at the keys, solo or in a small group — from first fingers to first recital.",
     details: [
@@ -94,7 +94,7 @@ export const PRODUCTS = [
     price: 120,
     age: "Ages 1–18",
     schedule: "Group or individual, weekday & weekend slots",
-    image: "banner-music-school.avif",
+    image: "photo-music-class.avif",
     badge: null,
     blurb: "Violin, ukulele, guitar or voice. Classes that end the term on an actual stage.",
     details: [
@@ -110,7 +110,7 @@ export const PRODUCTS = [
     price: 650,
     age: "Ages 7–12",
     schedule: "After school until 6.30pm, Mon–Fri",
-    image: "poster-daycare.avif",
+    image: "photo-ballet.avif",
     badge: null,
     blurb: "School pick-up, homework done, tuition in five subjects, proper meals — and care that runs till 6.30pm.",
     details: [

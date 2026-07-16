@@ -1,20 +1,21 @@
 /* ============================================================
    goodie-art.js — inline SVG illustrations for the 6 goodies.
-   Mockup A style: rounded, slightly wobbly hand-drawn strokes,
-   2 colours + a tinted paper background. Keyed by product id.
+   Direction A palette: ink navy outlines over calm periwinkle /
+   sage / sand fills on a soft tinted ground. Keyed by product id.
+   (Colour names are historical; the values are the calm palette.)
    ============================================================ */
 
 const C = {
   paper: "#FFFFFF",
-  ink: "#26276B",
-  clay: "#E8483A",
-  sage: "#2FA9E0",
-  marigold: "#F9C513",
-  terra: "#8A4FA3",
-  clayTint: "#FCE1DD",
-  sageTint: "#DDF1FC",
-  marTint: "#FDF2C8",
-  terraTint: "#F1E3F7",
+  ink: "#26276B",       /* ink navy */
+  clay: "#5E6FA6",      /* periwinkle */
+  sage: "#7E9A82",      /* sage */
+  marigold: "#C7A559",  /* muted sand-gold */
+  terra: "#46568B",     /* deep periwinkle */
+  clayTint: "#E7EAF3",  /* periwinkle tint */
+  sageTint: "#E6EDE6",  /* sage tint */
+  marTint: "#EFE6D3",   /* sand */
+  terraTint: "#EDEFF6", /* soft blue tint */
 };
 
 const stroke = `fill="none" stroke="${C.ink}" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"`;
