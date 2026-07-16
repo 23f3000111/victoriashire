@@ -97,7 +97,7 @@ export function initWhatsAppBot() {
   const nudge = document.createElement('button');
   nudge.type = 'button';
   nudge.className = 'wa-nudge';
-  nudge.innerHTML = 'Let&#39s chat';
+  nudge.textContent = "Let's chat";
 
   const launcher = document.createElement('button');
   launcher.type = 'button';

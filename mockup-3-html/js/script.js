@@ -119,7 +119,7 @@
   const nudge = document.createElement('button');
   nudge.type = 'button';
   nudge.className = 'wa-nudge';
-  nudge.innerHTML = '<strong>Victoriashire Admissions</strong> · Questions about enrolment? Tap to chat.';
+  nudge.textContent = "Let's chat";
 
   const launcher = document.createElement('button');
   launcher.type = 'button';
